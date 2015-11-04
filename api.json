@@ -1,0 +1,3654 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "The Huxley API",
+        "description": "The Huxley API",
+        "version": "1.0.0"
+    },
+    "host": "dev.thehuxley.com",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/api",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/user": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : ["read"]
+                }
+              ]
+            },
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ]
+            }
+        },
+        "/user/stats": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ]
+            }
+        },
+        "/user/password": {
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ]
+            }
+        },
+        "/user/avatar": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ]
+            },
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ]
+            },
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ]
+            } 
+        },
+        "/user/institutions/{institution_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Institution"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "institution_id",
+                  "in": "path",
+                  "description": "Institution identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/user/groups/{group_id} ": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/user/problems/{problem_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/user/problems/{problem_id}/examples/{test_case_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem", "TestCase"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "test_case_id",
+                  "in": "path",
+                  "description": "Test Case identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/user/problems/{problem_id}/stats": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/user/problems/{problem_id}/submissions/{submission_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem", "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem", "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/user/problems/suggestions": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ]
+            }
+        },
+        "/user/submissions/{submission_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Submission identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Submission identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/user/quizzes/{quizz_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Quizz"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/user/quizzes/{quizz_id}/problems/{problem_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Quizz", "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/user/quizzes/{quizz_id}/problems/{problem_id}/submissions/{submission_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Quizz", "Problem", "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Submission identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/user/messages/{message_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "message_id",
+                  "in": "path",
+                  "description": "Message identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "message_id",
+                  "in": "path",
+                  "description": "Message identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "message_id",
+                  "in": "path",
+                  "description": "Message identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "delete": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "message_id",
+                  "in": "path",
+                  "description": "Message identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/user/messages/{message_id}/read": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "message_id",
+                  "in": "path",
+                  "description": "Message identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/user/messages/{message_id}/response": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "message_id",
+                  "in": "path",
+                  "description": "Message identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/user/messages/count": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ]
+            }
+        },
+        "/user/contact": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "security": [
+                {
+                  "oauth2" : []
+                }
+              ]
+            }
+        },
+        "/users": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/users/validate": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/users/avatar/{key}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "key",
+                  "in": "path",
+                  "description": "Avatar key",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/password/{key}": {
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "key",
+                  "in": "path",
+                  "description": "Key",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/recoveryPassword": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/users/{user_id}/stats": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/avatar": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/institutions/{institution_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Institution"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "institution_id",
+                  "in": "path",
+                  "description": "Institution identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "Institution identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/groups/{group_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/problems/{problem_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/problems/{problem_id}/examples/{test_case_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "test_case_id",
+                  "in": "path",
+                  "description": "Test Case identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/problems/{problem_id}/stats": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/problems/{problem_id}/submissions/{submission_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem", "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Submission identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/problems/suggestions": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/submissions/{submission_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Submission identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/quizzes/{quizz_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/quizzes/{quizz_id}/problems/{problem_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem", "Quizz"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/quizzes/{quizz_id}/problems/{problem_id}/addPenalty": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem", "Quizz"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/quizzes/{quizz_id}/problems/{problem_id}/removePenalty": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem", "Quizz"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/quizzes/{quizz_id}/problems/{problem_id}/penalty": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem", "Quizz"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem", "Quizz"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "delete": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem", "Quizz"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/users/{user_id}/quizzes/{quizz_id}/problems/{problem_id}/submissions/{submission_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "User", "Problem", "Quizz"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Submission identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/institutions": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Institution"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/institutions/validate": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Institution"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/institutions/logo/{key}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Institution"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "key",
+                  "in": "path",
+                  "description": "Key",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/institutions/{institution_id}/logo": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Institution"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "institution_id",
+                  "in": "path",
+                  "description": "Institution identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Institution"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "institution_id",
+                  "in": "path",
+                  "description": "Institution identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Institution"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "institution_id",
+                  "in": "path",
+                  "description": "Institution identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/institutions/{institution_id}/users/{user_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Institution", "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "institution_id",
+                  "in": "path",
+                  "description": "Institution identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Institution", "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "institution_id",
+                  "in": "path",
+                  "description": "Institution identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "delete": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Institution", "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "institution_id",
+                  "in": "path",
+                  "description": "Institution identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/institutions/{institution_id}/changeStatus": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Institution"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "institution_id",
+                  "in": "path",
+                  "description": "Institution identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/institutions/{institution_id}/groups/{group_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Institution"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "institution_id",
+                  "in": "path",
+                  "description": "Institution identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/groups": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            },
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/groups/{group_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/groups/validate": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/groups/join/{key}": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "key",
+                  "in": "path",
+                  "description": "Key",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "key",
+                  "in": "path",
+                  "description": "Key",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/groups/{group_id}/key": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/groups/key/{key}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "key",
+                  "in": "path",
+                  "description": "Key",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/groups/{group_id}/users/{user_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group", "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group", "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "delete": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group", "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/groups/{group_id}/stats": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/groups/{group_id}/users/add": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group", "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/groups/{group_id}/quizzes/{quizz_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group", "Quizz"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/groups/{group_id}/submissions/{submission_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group", "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "group_id",
+                  "in": "path",
+                  "description": "Group identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Submission identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/groups/normalizeUrl": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Group"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/problems": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/problems/validate": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/problems/{problem_id}/stats": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/problems/{problem_id}/oracle": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/problems/{problem_id}/examples/{test_case_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Problem", "TestCase"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "test_case_id",
+                  "in": "path",
+                  "description": "Test Case identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/problems/{problem_id}/submissions/reevaluate": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Problem", "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/problems/{problem_id}/submissions/{submission_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Problem", "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Submission identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/problems/{problem_id}/submissions/{submission_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Problem", "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Submission identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/problems/{problem_id}/testcases/{test_case_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Problem", "TestCase"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "test_case_id",
+                  "in": "path",
+                  "description": "Test Case identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Problem", "TestCase"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "test_case_id",
+                  "in": "path",
+                  "description": "Test Case identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Problem", "TestCase"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "test_case_id",
+                  "in": "path",
+                  "description": "Test Case identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "delete": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Problem", "TestCase"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "test_case_id",
+                  "in": "path",
+                  "description": "Test Case identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/pull": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Long Polling"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/push": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Long Polling"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/submissions": {
+            "get": {
+                "summary": "Submission",
+                "description": "Retorna todas as submissões.\n",
+                "tags": [
+                    "Submission"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An array of submissions",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Submission"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/submissions/reevaluate": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/submissions/{submission_id}/reevaluate": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Submission identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/submissions/{submission_id}/sourcecode": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Submission identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/submissions/{submission_id}/diff": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Submission identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/quizzes": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Quizz"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/quizzes/{quizz_id}/stats": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Quizz"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/quizzes/{quizz_id}/problems/{problem_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Quizz", "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Quizz", "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "put": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Quizz", "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            },
+            "delete": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Quizz", "Problem"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/quizzes/{quizz_id}/problems/{problem_id}/examples/{test_case_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Quizz", "Problem", "TestCase"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "test_case_id",
+                  "in": "path",
+                  "description": "Test Case identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/quizzes/{quizz_id}/similarities": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Quizz"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/quizzes/{quizz_id}/problems/{problem_id}/submissions/{submission_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Quizz", "Problem", "Submission"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "submission_id",
+                  "in": "path",
+                  "description": "Submission identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/quizzes/{quizz_id}/users/{user_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Quizz", "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/quizzes/{quizz_id}/users/{user_id}/problems/{problem_id}": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Quizz", "Problem", "User"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "quizz_id",
+                  "in": "path",
+                  "description": "Quizz identifier",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "problem_id",
+                  "in": "path",
+                  "description": "Problem identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/topcoders": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "TopCoder"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/topcoders/updateNds": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "TopCoder"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/topcoders/{user_id}/refreshTopCoder": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "TopCoder"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              },
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User identifier",
+                  "required": true,
+                  "type": "string"
+                }
+              ]
+            }
+        },
+        "/topcoders/refreshTopCoder": {
+            "post": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "TopCoder"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/topics": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Topic"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                },
+                "200": {
+                    "description": "An array of topics",
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/Topic"
+                        }
+                    }
+                }
+              }
+            }
+        },
+        "/languages": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Language"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                },
+                "200": {
+                    "description": "An array of languages",
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/Language"
+                        }
+                    }
+                }
+              }
+            }
+        },
+        "/licenses": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "License"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+              }
+            }
+        },
+        "/pendencies": {
+            "get": {
+              "summary": "",
+              "description": "",
+              "tags": [
+                  "Pendency"
+              ],
+              "responses": {
+                "default": {
+                    "description": "Unexpected error",
+                    "schema": {
+                        "$ref": "#/definitions/Error"
+                    }
+                },
+                "200": {
+                    "description": "An array of pendencies",
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/Pendency"
+                        }
+                    }
+                }
+              }
+            }
+        }
+    },
+    "securityDefinitions": {
+      "oauth2": {
+          "type": "oauth2",
+          "flow": "implicit",
+          "authorizationUrl": "http://dev.thehuxley.com:8080/api/oauth/authorize",
+          "scopes": {
+              "read": "allow read",
+              "write": "allow write"
+          }
+      }
+    },
+    "definitions": {
+        "Institution": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Unique identifier."
+                },
+                "name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "acronym": {
+                    "type": "string",
+                    "description": ""
+                },
+                "logo": {
+                    "type": "string",
+                    "description": ""
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                      "PENDING", 
+                      "APPROVED", 
+                      "REJECTED"
+                    ],
+                    "description": ""
+                }
+            }
+        },
+        "User": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Unique identifier."
+                },
+                "name": {
+                    "type": "string",
+                     "description": ""
+                },
+                "avatar": {
+                    "type": "string",
+                     "description": ""
+                },
+                "institution": {
+                  "$ref" : "#/definitions/Institution"
+                }
+            }
+        },
+        "Problem": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Unique identifier."
+                },
+                "name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "description": {
+                    "type": "string",
+                    "description": ""
+                },
+                "inputFormat": {
+                    "type": "string",
+                    "description": ""
+                },
+                "outputFormat": {
+                    "type": "string",
+                    "description": ""
+                },
+                "source": {
+                    "type": "string",
+                    "description": ""
+                },
+                "level": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "timeLimit": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "nd": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "dateCreated": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "lastUpdated": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "approvedBy": {
+                  "$ref" : "#/definitions/User"
+                },
+                "suggestedBy": {
+                  "$ref" : "#/definitions/User"
+                },
+                "topics": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/Topic"
+                  }
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                      "PENDING", 
+                      "ACCEPTED", 
+                      "REJECTED"
+                    ],
+                    "description": ""
+                }
+            }
+        },
+        "Topic": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Unique identifier."
+                },
+                "name": {
+                    "type": "string",
+                     "description": ""
+                }
+            }
+        },
+        "Language": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Unique identifier."
+                },
+                "name": {
+                    "type": "string",
+                     "description": ""
+                },
+                "compiler": {
+                    "type": "string",
+                     "description": ""
+                },
+                "extension": {
+                    "type": "string",
+                     "description": ""
+                },
+                "script": {
+                    "type": "string",
+                     "description": ""
+                }
+            }
+        },
+        "Pendency": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Unique identifier."
+                },
+                "kind": {
+                    "type": "string",
+                    "enum": [
+                      "INSTITUTION_DOCUMENT",
+                      "INSTITUTION_APPROVAL",
+                      "TEACHER_DOCUMENT",
+                      "TEACHER_APPROVAL",
+                      "USER_GROUP_INVITATION",
+                      "USER_GROUP_JOIN_REQUEST"
+                    ],
+                    "description": ""
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                      "PENDING",
+                      "APPROVED",
+                      "REJECTED"
+                    ],
+                    "description": ""
+                },
+                "user": {
+                    "$ref" : "#/definitions/User"
+                }
+            }
+        },
+        "Submission": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Unique identifier."
+                },
+                "time": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Unique identifier."
+                },
+                "tries": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Unique identifier."
+                },
+                "comment": {
+                    "type": "string",
+                     "description": ""
+                },
+                "submissionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "evaluation": {
+                    "type": "string",
+                    "enum": [
+                      "CORRECT",
+                      "WRONG_ANSWER",
+                      "RUNTIME_ERROR",
+                      "COMPILATION_ERROR",
+                      "EMPTY_ANSWER",
+                      "TIME_LIMIT_EXCEEDED",
+                      "WAITING",
+                      "EMPTY_TEST_CASE",
+                      "WRONG_FILE_NAME",
+                      "PRESENTATION_ERROR",
+                      "HUXLEY_ERROR"
+                    ],
+                    "description": ""
+                },
+                "filename": {
+                    "type": "string",
+                     "description": ""
+                },
+                "testCase": {
+                  "$ref" : "#/definitions/TestCase"
+                },
+                "user": {
+                  "$ref" : "#/definitions/User"
+                },
+                "problem": {
+                  "$ref" : "#/definitions/Problem"
+                },
+                "language": {
+                  "$ref" : "#/definitions/Language"
+                }
+            }
+        },
+        "TestCase": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Unique identifier."
+                },
+                "input": {
+                    "type": "string",
+                     "description": ""
+                },
+                "output": {
+                    "type": "string",
+                     "description": ""
+                },
+                "tip": {
+                    "type": "string",
+                     "description": ""
+                },
+                "dateCreated": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "lastUpdated": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "example": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "maxOutputSize": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "rank": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "unrank": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "problem": {
+                  "$ref" : "#/definitions/Problem"
+                }
+            }
+        },
+        "Error": {
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string",
+                     "description": "Error message."
+                }
+            }
+        }
+    }
+}
