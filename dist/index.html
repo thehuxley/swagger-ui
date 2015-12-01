@@ -1,0 +1,51 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/monokai_sublime.min.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<h3>Documentação API - The Huxley</h3>
+
+	<p>Nesta página é possível encontrar exemplos para acesso à API e também todos os recursos oferecidos.</p>
+
+	<p>Abaixo temos um exemplo de utilização em python 2.7.</p>
+
+<pre>
+<code class="python">
+import requests
+import requests.auth
+
+import getpass
+
+def get_token(username, password):
+    post_data = {
+    	"client_id": "ui",
+    	"grant_type": "password",                 
+    	"username": username,
+    	"password": password,
+    	"scope": "read"
+    }
+    response = requests.post("https://thehuxley.com/api/oauth/token",
+                             data=post_data)
+    token_json = response.json()
+    return token_json["access_token"]
+
+def get_problems_suggestion(access_token):
+    headers = {"Authorization": "bearer " + access_token}
+    response = requests.get("https://thehuxley.com/api/user/problems", headers=headers)
+    return response.json()
+
+username = raw_input("Please enter your username:")
+password = getpass.getpass("Please enter your password:")
+
+token = get_token(username, password)
+print get_problems_suggestion(token)
+</code>
+</pre>
+
+	<p>Para saber mais sobre todos os nossos recursos, clique <a href="swagger.html">aqui</a>.</p>
+</body>
+</html>
