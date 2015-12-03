@@ -1,0 +1,103 @@
+body {
+    background-color: #eaeaea;
+}
+
+.background-img {
+    background-image: url("../images/huxleylogo.png");
+    background-position: -9px -7px;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 989px;
+    }
+}
+
+.box {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #808080;
+    border-radius: 0;
+    padding: 0;
+}
+
+.home-panel {
+    display: flex !important;
+    display: -webkit-flex !important;
+}
+
+.home-panel-left {
+    background-color: #bbd6e7;
+    width: 90px;
+}
+
+.home-panel > div {
+    height: 94px;
+    display: inline-block;
+}
+
+.home-panel-mid {
+    background-color: #e7f1f6;
+    flex-grow: 2;
+    -webkit-flex-grow: 2;
+    display: flex !important;
+    display: -webkit-flex !important;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+.home-panel-logo-container {
+    margin-left: -50px;
+    margin-right: 0;
+    width: 150px;
+}
+
+.home-panel-logo-container > i {
+    background-color: #ffffff;
+    width: 95px;
+    height: 95px;
+    text-align: center;
+    line-height: 37px;
+    vertical-align: middle;
+    display: flex !important;
+    display: -webkit-flex !important;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+}
+
+.home-panel-logo-container > i > i {
+    vertical-align: text-top;
+    background-color: #f36523;
+    width: 90px;
+    height: 90px;
+}
+
+.icon {
+    display: inline-block;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.home-info {
+    padding: 0 20px;
+}
