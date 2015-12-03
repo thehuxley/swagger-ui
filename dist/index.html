@@ -50,22 +50,22 @@ import requests.auth
 import getpass
 
 def get_token(username, password):
-post_data = {
-"client_id": "ui",
-"grant_type": "password",
-"username": username,
-"password": password,
-"scope": "read"
-}
-response = requests.post("https://thehuxley.com/api/oauth/token",
-data=post_data)
-token_json = response.json()
-return token_json["access_token"]
+    post_data = {
+        "client_id": "ui",
+        "grant_type": "password",
+        "username": username,
+        "password": password,
+        "scope": "read"
+    }
+    response = requests.post("https://thehuxley.com/api/oauth/token",
+                             data=post_data)
+    token_json = response.json()
+    return token_json["access_token"]
 
 def get_problems_suggestion(access_token):
-headers = {"Authorization": "bearer " + access_token}
-response = requests.get("https://thehuxley.com/api/user/problems", headers=headers)
-return response.json()
+    headers = {"Authorization": "bearer " + access_token}
+    response = requests.get("https://thehuxley.com/api/user/problems", headers=headers)
+    return response.json()
 
 username = raw_input("Please enter your username:")
 password = getpass.getpass("Please enter your password:")
@@ -92,77 +92,78 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 public class Main {
 
-private String token;
+    private String token;
 
-public void login(String username, String password) throws Exception {
-String url = "https://thehuxley.com/api/oauth/token";
+    public void login(String username, String password) throws Exception {
+        String url = "https://thehuxley.com/api/oauth/token";
 
-HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
+        HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
 
-connection.setDoInput(true);
-connection.setDoOutput(true);
+        connection.setDoInput(true);
+        connection.setDoOutput(true);
 
-connection.setRequestMethod("POST");
-connection.setRequestProperty("Accept-Charset", "UTF-8");
+        connection.setRequestMethod("POST");
+        connection.setRequestProperty("Accept-Charset", "UTF-8");
 
-String urlParameters = String.format("client_id=ui&grant_type=password&username=%s&password=%s&scope=read", username, password);
+        String urlParameters = String.format("client_id=ui&grant_type=password&username=%s&password=%s&scope=read",
+                                             username, password);
 
-connection.setDoOutput(true);
-DataOutputStream dataOutputStream = new DataOutputStream(connection.getOutputStream());
-dataOutputStream.writeBytes(urlParameters);
-dataOutputStream.flush();
-dataOutputStream.close();
+        connection.setDoOutput(true);
+        DataOutputStream dataOutputStream = new DataOutputStream(connection.getOutputStream());
+        dataOutputStream.writeBytes(urlParameters);
+        dataOutputStream.flush();
+        dataOutputStream.close();
 
-BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
+        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
 
-while ((inputLine = in.readLine()) != null) {
-response.append(inputLine);
-}
-in.close();
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
 
-JsonNode jsonNode = new ObjectMapper().readTree(response.toString());
+        JsonNode jsonNode = new ObjectMapper().readTree(response.toString());
 
-this.token = jsonNode.path("access_token").getTextValue();
-}
+        this.token = jsonNode.path("access_token").getTextValue();
+    }
 
-public void listarProblemas() throws Exception {
-String url = "https://thehuxley.com/api/user/problems";
+    public void listarProblemas() throws Exception {
+        String url = "https://thehuxley.com/api/user/problems";
 
-HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
+        HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
 
-connection.setDoInput(true);
-connection.setDoOutput(false);
+        connection.setDoInput(true);
+        connection.setDoOutput(false);
 
-connection.setRequestProperty("Authorization", "Bearer " + this.token);
-connection.setRequestMethod("GET");
-connection.setRequestProperty("Accept-Charset", "UTF-8");
+        connection.setRequestProperty("Authorization", "Bearer " + this.token);
+        connection.setRequestMethod("GET");
+        connection.setRequestProperty("Accept-Charset", "UTF-8");
 
-BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
+        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
 
-while ((inputLine = in.readLine()) != null) {
-response.append(inputLine);
-}
-in.close();
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
 
-JsonNode rootNode = new ObjectMapper().readTree(response.toString());
+        JsonNode rootNode = new ObjectMapper().readTree(response.toString());
 
-Iterator<JsonNode> iterator = rootNode.getElements();
-while (iterator.hasNext()) {
-JsonNode node = iterator.next();
+        Iterator<JsonNode> iterator = rootNode.getElements();
+        while (iterator.hasNext()) {
+            JsonNode node = iterator.next();
 
-System.out.println(node.path("name").getTextValue());
-}
-}
+            System.out.println(node.path("name").getTextValue());
+        }
+    }
 
-public static void main(String[] args) throws Exception {
-Main acessoAPI = new Main();
-acessoAPI.login("username", "password");
-acessoAPI.listarProblemas();
-}
+    public static void main(String[] args) throws Exception {
+        Main acessoAPI = new Main();
+        acessoAPI.login("username", "password");
+        acessoAPI.listarProblemas();
+    }
 
 }
 
