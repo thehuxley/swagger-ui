@@ -3,64 +3,82 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/monokai_sublime.min.css">
+    <link rel="stylesheet" href="css/huxley.css">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
-	<h3>Documentação API - The Huxley</h3>
+	<div class="container box">
 
-    <p>Nesta página é possível encontrar exemplos para acesso à API e também todos os recursos oferecidos.</p>
+        <div class="home-panel">
+            <div class="home-panel-left">
 
-    <ul>
-        <li><a href="#exemplos">Exemplos</a></li>
-        <li><a href="#recursos">Recursos</a></li>
-    </ul>
+            </div>
+            <div class="home-panel-mid">
+                <div class="home-panel-logo-container">
+                    <i class="img-circle icon">
+                        <i class="background-img icon img-bigger img-circle"></i>
+                    </i>
+                </div>
+                <div>
+                    <h2>Documentação API - The Huxley</h2>
+                </div>
+            </div>
+        </div>
 
-    <div id="exemplos">
+        <div class="home-info">
+            <p>Nesta página é possível encontrar exemplos para acesso à API e também todos os recursos oferecidos.</p>
 
-        <h3>Exemplos</h3>
+            <ul>
+                <li><a href="#exemplos">Exemplos</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+            </ul>
 
-    	<p>Abaixo temos um exemplo de utilização em Python 2.7 e Java. Os exemplos são apenas para ilustrar, não devem ser utilizados em produção.</p>
+            <div id="exemplos">
 
-        <p>O exemplo abaixo utiliza a biblioteca requests para realizar requisições.</p>
+                <h3>Exemplos</h3>
 
-<pre>
-<code class="python">
+                <p>Abaixo temos um exemplo de utilização em Python 2.7 e Java. Os exemplos são apenas para ilustrar, não devem ser utilizados em produção.</p>
+
+                <p>O exemplo abaixo utiliza a biblioteca requests para realizar requisições.</p>
+
+            <pre>
+            <code class="python">
 import requests
 import requests.auth
 
 import getpass
 
 def get_token(username, password):
-    post_data = {
-    	"client_id": "ui",
-    	"grant_type": "password",                 
-    	"username": username,
-    	"password": password,
-    	"scope": "read"
-    }
-    response = requests.post("https://thehuxley.com/api/oauth/token",
-                             data=post_data)
-    token_json = response.json()
-    return token_json["access_token"]
+post_data = {
+"client_id": "ui",
+"grant_type": "password",
+"username": username,
+"password": password,
+"scope": "read"
+}
+response = requests.post("https://thehuxley.com/api/oauth/token",
+data=post_data)
+token_json = response.json()
+return token_json["access_token"]
 
 def get_problems_suggestion(access_token):
-    headers = {"Authorization": "bearer " + access_token}
-    response = requests.get("https://thehuxley.com/api/user/problems", headers=headers)
-    return response.json()
+headers = {"Authorization": "bearer " + access_token}
+response = requests.get("https://thehuxley.com/api/user/problems", headers=headers)
+return response.json()
 
 username = raw_input("Please enter your username:")
 password = getpass.getpass("Please enter your password:")
 
 token = get_token(username, password)
 print get_problems_suggestion(token)
-</code>
-</pre>
+            </code>
+            </pre>
 
-        <p>O exemplo abaixo utiliza a biblioteca jackson para fazer parse de JSON.</p>
+                <p>O exemplo abaixo utiliza a biblioteca jackson para fazer parse de JSON.</p>
 
-<pre>
-<code class="java">
+            <pre>
+            <code class="java">
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -73,91 +91,96 @@ import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 
 public class Main {
-    
-    private String token;
 
-    public void login(String username, String password) throws Exception {
-        String url = "https://thehuxley.com/api/oauth/token";
-        
-        HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
-        
-        connection.setDoInput(true);
-        connection.setDoOutput(true);
-        
-        connection.setRequestMethod("POST");
-        connection.setRequestProperty("Accept-Charset", "UTF-8");
-        
-        String urlParameters = String.format("client_id=ui&grant_type=password&username=%s&password=%s&scope=read", username, password);
-        
-        connection.setDoOutput(true);
-        DataOutputStream dataOutputStream = new DataOutputStream(connection.getOutputStream());
-        dataOutputStream.writeBytes(urlParameters);
-        dataOutputStream.flush();
-        dataOutputStream.close();
+private String token;
 
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        String inputLine;
-        StringBuffer response = new StringBuffer();
+public void login(String username, String password) throws Exception {
+String url = "https://thehuxley.com/api/oauth/token";
 
-        while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
-        }
-        in.close();
-        
-        JsonNode jsonNode = new ObjectMapper().readTree(response.toString());
-        
-        this.token = jsonNode.path("access_token").getTextValue();
-    }
+HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
 
-    public void listarProblemas() throws Exception {
-        String url = "https://thehuxley.com/api/user/problems";
-        
-        HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
-        
-        connection.setDoInput(true);
-        connection.setDoOutput(false);
-        
-        connection.setRequestProperty("Authorization", "Bearer " + this.token);
-        connection.setRequestMethod("GET");
-        connection.setRequestProperty("Accept-Charset", "UTF-8");
+connection.setDoInput(true);
+connection.setDoOutput(true);
 
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        String inputLine;
-        StringBuffer response = new StringBuffer();
+connection.setRequestMethod("POST");
+connection.setRequestProperty("Accept-Charset", "UTF-8");
 
-        while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
-        }
-        in.close();
+String urlParameters = String.format("client_id=ui&grant_type=password&username=%s&password=%s&scope=read", username, password);
 
-        JsonNode rootNode = new ObjectMapper().readTree(response.toString());
-        
-        Iterator<JsonNode> iterator = rootNode.getElements();
-        while (iterator.hasNext()) {
-            JsonNode node = iterator.next();
-            
-            System.out.println(node.path("name").getTextValue());
-        }
-    }
-    
-    public static void main(String[] args) throws Exception {
-        Main acessoAPI = new Main();
-        acessoAPI.login("username", "password");
-        acessoAPI.listarProblemas();
-    }
+connection.setDoOutput(true);
+DataOutputStream dataOutputStream = new DataOutputStream(connection.getOutputStream());
+dataOutputStream.writeBytes(urlParameters);
+dataOutputStream.flush();
+dataOutputStream.close();
+
+BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+
+while ((inputLine = in.readLine()) != null) {
+response.append(inputLine);
+}
+in.close();
+
+JsonNode jsonNode = new ObjectMapper().readTree(response.toString());
+
+this.token = jsonNode.path("access_token").getTextValue();
+}
+
+public void listarProblemas() throws Exception {
+String url = "https://thehuxley.com/api/user/problems";
+
+HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
+
+connection.setDoInput(true);
+connection.setDoOutput(false);
+
+connection.setRequestProperty("Authorization", "Bearer " + this.token);
+connection.setRequestMethod("GET");
+connection.setRequestProperty("Accept-Charset", "UTF-8");
+
+BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+
+while ((inputLine = in.readLine()) != null) {
+response.append(inputLine);
+}
+in.close();
+
+JsonNode rootNode = new ObjectMapper().readTree(response.toString());
+
+Iterator<JsonNode> iterator = rootNode.getElements();
+while (iterator.hasNext()) {
+JsonNode node = iterator.next();
+
+System.out.println(node.path("name").getTextValue());
+}
+}
+
+public static void main(String[] args) throws Exception {
+Main acessoAPI = new Main();
+acessoAPI.login("username", "password");
+acessoAPI.listarProblemas();
+}
 
 }
-</code>
-</pre>
 
-    </div id="exemplos">
+            </code>
+                </pre>
 
-    <div id="recursos">
+            </div>
 
-        <h3>Recursos</h3>
+            <div id="recursos">
 
-        <p>Para saber mais sobre todos os nossos recursos, clique <a href="swagger.html">aqui</a>.</p>
-        
+                <h3>Recursos</h3>
+
+                <p>Para saber mais sobre todos os nossos recursos, clique <a href="swagger.html">aqui</a>.</p>
+
+            </div>
+        </div>
+
+
     </div>
 </body>
 </html>
