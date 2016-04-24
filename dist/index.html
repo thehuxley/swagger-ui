@@ -51,20 +51,20 @@ import getpass
 
 def get_token(username, password):
     post_data = {
-        "client_id": "ui",
         "grant_type": "password",
         "username": username,
         "password": password,
         "scope": "read"
     }
-    response = requests.post("https://thehuxley.com/api/oauth/token",
-                             data=post_data)
+    headers = {"Authorization": "Basic dWk6"}
+    response = requests.post("https://thehuxley.com/auth/oauth/token", headers=headers, data=post_data)
+
     token_json = response.json()
     return token_json["access_token"]
 
 def get_problems_suggestion(access_token):
-    headers = {"Authorization": "bearer " + access_token}
-    response = requests.get("https://thehuxley.com/api/user/problems", headers=headers)
+    headers = {"Authorization": "Bearer " + access_token}
+    response = requests.get("https://thehuxley.com/api/v1/user/problems", headers=headers)
     return response.json()
 
 username = raw_input("Please enter your username:")
@@ -95,7 +95,7 @@ public class Main {
     private String token;
 
     public void login(String username, String password) throws Exception {
-        String url = "https://thehuxley.com/api/oauth/token";
+        String url = "https://thehuxley.com/auth/oauth/token";
 
         HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
 
@@ -104,8 +104,10 @@ public class Main {
 
         connection.setRequestMethod("POST");
         connection.setRequestProperty("Accept-Charset", "UTF-8");
+        
+        connection.setRequestProperty("Authorization", "Basic dWk6");
 
-        String urlParameters = String.format("client_id=ui&grant_type=password&username=%s&password=%s&scope=read",
+        String urlParameters = String.format("grant_type=password&username=%s&password=%s&scope=read",
                                              username, password);
 
         connection.setDoOutput(true);
@@ -129,7 +131,7 @@ public class Main {
     }
 
     public void listarProblemas() throws Exception {
-        String url = "https://thehuxley.com/api/user/problems";
+        String url = "https://thehuxley.com/api/v1/user/problems";
 
         HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
 
